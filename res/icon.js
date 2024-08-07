@@ -105,13 +105,13 @@ var iconList = {
     "Killicon_bread_bite.png": "heavy melee",
   },
   36: {
-    "Killicon_bumper_car.png": "allclass other",
+    "Killicon_bumper_car.png": "multiclass other",
   },
   37: {
     "Killicon_bushwacka.png": "sniper melee",
   },
   38: {
-    "Killicon_c.a.p.p.e.r.png": "allclass other",
+    "Killicon_c.a.p.p.e.r.png": "multiclass other",
   },
   39: {
     "Killicon_candy_cane.png": "scout melee",
@@ -132,7 +132,7 @@ var iconList = {
     "Killicon_connivers_kunai.png": "spy melee",
   },
   45: {
-    "Killicon_conscientious_objector.png": "allclass melee",
+    "Killicon_conscientious_objector.png": "multiclass melee",
   },
   46: {
     "Killicon_cow_mangler_5000.png": "soldier primary",
@@ -141,10 +141,10 @@ var iconList = {
     "Killicon_crit.png": "other",
   },
   48: {
-    "Killicon_crocodile.png": "other",
+    "Killicon_crocodile.png": "special",
   },
   49: {
-    "Killicon_crossing_guard.png": "allclass melee",
+    "Killicon_crossing_guard.png": "multiclass melee",
   },
   50: {
     "Killicon_crusaders_crossbow.png": "medic primary",
@@ -285,13 +285,13 @@ var iconList = {
     "Killicon_force-a-nature.png": "scout primary",
   },
   96: {
-    "Killicon_freedom_staff.png": "allclass melee",
+    "Killicon_freedom_staff.png": "multiclass melee",
   },
   97: {
     "Killicon_frontier_justice.png": "engi primary",
   },
   98: {
-    "Killicon_frying_pan.png": "allclass melee",
+    "Killicon_frying_pan.png": "multiclass melee",
   },
   99: {
     "Killicon_gas_blast.png": "pyro secondary",
@@ -303,7 +303,7 @@ var iconList = {
     "Killicon_gloves_of_running_urgently.png": "heavy melee",
   },
   102: {
-    "Killicon_golden_frying_pan.png": "allclass melee",
+    "Killicon_golden_frying_pan.png": "multiclass melee",
   },
   103: {
     "Killicon_golden_wrench.png": "engi melee",
@@ -327,7 +327,7 @@ var iconList = {
     "Killicon_half-zatoichi_duel.png": "soldier demo melee",
   },
   110: {
-    "Killicon_ham_shank.png": "allclass melee",
+    "Killicon_ham_shank.png": "multiclass melee",
   },
   111: {
     "Killicon_hhg.png": "soldier other",
@@ -429,19 +429,19 @@ var iconList = {
     "Killicon_maul.png": "pyro melee",
   },
   144: {
-    "Killicon_memory_maker.png": "allclass melee",
+    "Killicon_memory_maker.png": "multiclass melee",
   },
   145: {
-    "Killicon_merasmus.png": "other",
+    "Killicon_merasmus.png": "special",
   },
   146: {
-    "Killicon_merasmus2.png": "other",
+    "Killicon_merasmus2.png": "special",
   },
   147: {
-    "Killicon_merasmus3.png": "other",
+    "Killicon_merasmus3.png": "special",
   },
   148: {
-    "Killicon_merasmus4.png": "other",
+    "Killicon_merasmus4.png": "special",
   },
   149: {
     "Killicon_meteor_shower.png": "other",
@@ -465,7 +465,7 @@ var iconList = {
     "Killicon_natascha.png": "heavy primary",
   },
   156: {
-    "Killicon_necro_smasher.png": "allclass melee",
+    "Killicon_necro_smasher.png": "multiclass melee",
   },
   157: {
     "Killicon_neon_annihilator.png": "pyro melee",
@@ -513,10 +513,10 @@ var iconList = {
     "Killicon_pretty_boys_pocket_pistol.png": "scout secondary",
   },
   172: {
-    "Killicon_prinny_machete.png": "allclass melee",
+    "Killicon_prinny_machete.png": "multiclass melee",
   },
   173: {
-    "Killicon_pumpkin.png": "other",
+    "Killicon_pumpkin.png": "special",
   },
   174: {
     "Killicon_pumpkin_mirv.png": "other",
@@ -552,10 +552,10 @@ var iconList = {
     "Killicon_sandman_ball.png": "scout melee",
   },
   185: {
-    "Killicon_saw_blade.png": "other",
+    "Killicon_saw_blade.png": "special",
   },
   186: {
-    "Killicon_saxxy.png": "allclass melee",
+    "Killicon_saxxy.png": "multiclass melee",
   },
   187: {
     "Killicon_scattergun.png": "scout primary",
@@ -573,16 +573,16 @@ var iconList = {
     "Killicon_scottish_resistance.png": "demo secondary",
   },
   192: {
-    "Killicon_sentry1.png": "engi other",
+    "Killicon_sentry1.png": "engi pda",
   },
   193: {
-    "Killicon_sentry1_unused.png": "engi other",
+    "Killicon_sentry1_unused.png": "engi pda",
   },
   194: {
-    "Killicon_sentry2.png": "engi other",
+    "Killicon_sentry2.png": "engi pda",
   },
   195: {
-    "Killicon_sentry3.png": "engi other",
+    "Killicon_sentry3.png": "engi pda",
   },
   196: {
     "Killicon_shahanshah.png": "sniper melee",
@@ -612,7 +612,7 @@ var iconList = {
     "Killicon_shovel.png": "soldier melee",
   },
   205: {
-    "Killicon_showdown.png": "heavy other",
+    "Killicon_showdown.png": "heavy melee",
   },
   206: {
     "Killicon_shredalert_unused.png": "allclass other",
@@ -624,7 +624,7 @@ var iconList = {
     "Killicon_skewer.png": "sniper other",
   },
   209: {
-    "Killicon_skull.png": "allclass other",
+    "Killicon_skull.png": "multiclass other special",
   },
   210: {
     "Killicon_SMG.png": "sniper secondary",
@@ -633,7 +633,7 @@ var iconList = {
     "Killicon_snack_attack.png": "spy pda",
   },
   212: {
-    "Killicon_sniperriflehs.png": "pyro other",
+    "Killicon_sniperriflehs.png": "sniper spy primary",
   },
   213: {
     "Killicon_sniper_rifle.png": "sniper primary",
@@ -642,162 +642,159 @@ var iconList = {
     "Killicon_soda_popper.png": "scout primary",
   },
   215: {
-    "Killicon_solemn_vow.png": "medi melee",
+    "Killicon_solemn_vow.png": "medic melee",
   },
   216: {
     "Killicon_southern_hospitality.png": "engi melee",
   },
   217: {
-    "Killicon_spinaltap_unused.png": "medic other",
-  },
-  218: {
     "Killicon_splendid_screen.png": "demo secondary",
   },
-  219: {
+  218: {
     "Killicon_spy-cicle.png": "spy melee",
   },
-  220: {
+  219: {
     "Killicon_stickybomb_launcher.png": "demo secondary",
   },
-  221: {
+  220: {
     "Killicon_sun-on-a-stick.png": "scout melee",
   },
-  222: {
-    "Killicon_superjump.png": "other",
+  221: {
+    "Killicon_superjump.png": "multiclass other",
   },
-  223: {
+  222: {
     "Killicon_sydney_sleeper.png": "sniper primary",
   },
-  224: {
+  223: {
     "Killicon_syringe_gun.png": "medic primary",
   },
+  224: {
+    "Killicon_teleport.png": "multiclass other",
+  },
   225: {
-    "Killicon_teleport.png": "other",
+    "Killicon_tesla_bolt.png": "multiclass other",
   },
   226: {
-    "Killicon_tesla_bolt.png": "other",
-  },
-  227: {
     "Killicon_third_degree.png": "pyro melee",
   },
-  228: {
+  227: {
     "Killicon_third_degree_transfer.png": "pyro melee",
   },
-  229: {
+  228: {
     "Killicon_three-rune_blade.png": "scout melee",
   },
-  230: {
+  229: {
     "Killicon_tide_turner.png": "demo secondary",
   },
-  231: {
+  230: {
     "Killicon_tomislav.png": "heavy primary",
   },
+  231: {
+    "Killicon_tool_chest.png": "engi pda",
+  },
   232: {
-    "Killicon_tool_chest.png": "engi other",
+    "Killicon_train.png": "special",
   },
   233: {
-    "Killicon_train.png": "other",
-  },
-  234: {
     "Killicon_tribalmans_shiv.png": "sniper melee",
   },
-  235: {
+  234: {
     "Killicon_ubersaw.png": "medic melee",
   },
-  236: {
+  235: {
     "Killicon_ullapool_caber.png": "demo melee",
   },
-  237: {
+  236: {
     "Killicon_ullapool_caber_explode.png": "demo melee",
   },
-  238: {
+  237: {
     "Killicon_unarmed_combat.png": "scout melee",
   },
-  239: {
-    "Killicon_underworld.png": "other",
+  238: {
+    "Killicon_underworld.png": "special",
   },
-  240: {
+  239: {
     "Killicon_vita-saw.png": "medic melee",
   },
-  241: {
+  240: {
     "Killicon_wanga_prick.png": "spy melee",
   },
-  242: {
+  241: {
     "Killicon_warriors_spirit.png": "heavy melee",
   },
-  243: {
+  242: {
     "Killicon_widowmaker.png": "engi primary",
   },
-  244: {
+  243: {
     "Killicon_winger.png": "scout secondary",
   },
-  245: {
+  244: {
     "Killicon_wrangler.png": "engi secondary",
   },
-  246: {
+  245: {
     "Killicon_wrap_assassin.png": "scout melee",
   },
-  247: {
+  246: {
     "Killicon_wrap_assassin_ball.png": "scout melee",
   },
-  248: {
+  247: {
     "Killicon_wrench.png": "engi melee",
   },
-  249: {
+  248: {
     "Killicon_your_eternal_reward.png": "spy melee",
   },
+  249: {
+    "Killicon_domination.png": "multiclass other",
+  },
   250: {
-    "Killicon_domination.png": "allclass other",
+    "Killicon_uwu.png": "special",
   },
   251: {
-    "Killicon_uwu.png": "allclass other",
+    "Duckstreak_Icon.png": "multiclass other",
   },
   252: {
-    "Duckstreak_Icon.png": "allclass other",
+    "Killicon_alien_walker_unused.png": "special",
   },
   253: {
-    "Killicon_alien_walker_unused.png": "allclass other",
-  },
-  254: {
     "Killicon_arm_blender.png": "engi melee",
   },
-  255: {
-    "Killicon_arrow_stab.png": "sniper other",
+  254: {
+    "Killicon_arrow_stab.png": "sniper primary",
   },
-  256: {
+  255: {
     "Killicon_barbarian_swing.png": "demo melee",
   },
-  257: {
+  256: {
     "Killicon_duck.png": "allclass other",
   },
+  257: {
+    "Killicon_grand_slam.png": "scout melee",
+  },
   258: {
-    "Killicon_grand_slam.png": "scout sniper medic other",
+    "Killicon_grenade_(taunt).png": "soldier melee",
   },
   259: {
-    "Killicon_grenade_(taunt).png": "demo soldier other",
+    "Killicon_guitar_smash.png": "engi primary",
   },
   260: {
-    "Killicon_guitar_smash.png": "engi melee other",
+    "Killicon_high_noon.png": "heavy melee",
   },
   261: {
-    "Killicon_high_noon.png": "heavy other",
+    "Killicon_krampus.png": "special",
   },
   262: {
-    "Killicon_krampus.png": "allclass other",
+    "Killicon_krampus2.png": "special",
   },
   263: {
-    "Killicon_krampus2.png": "allclass other",
+    "Killicon_salmann.png": "special",
   },
   264: {
-    "Killicon_salmann.png": "allclass other",
+    "Killicon_sharks.png": "special",
   },
   265: {
-    "Killicon_sharks.png": "allclass other",
+    "Killicon_uberslice.png": "medic melee",
   },
   266: {
-    "Killicon_uberslice.png": "medic other",
-  },
-  267: {
-    "Killicon_zamboni.png": "allclass other",
+    "Killicon_zamboni.png": "special",
   },
 };

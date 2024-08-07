@@ -9,7 +9,7 @@ function get_icon_list() {
   console.log(`Icon amount: ${len}`);
   var f = "icons_sorted/";
 
-  for (var i = 1; i < len + 1; i++) {
+  for (var i = 1; i <= len; i++) {
     var fname = Object.keys(iconList[`${i}`]);
     var tags = iconList[i][fname];
     $(".killicon-container").append(
@@ -23,21 +23,43 @@ function get_icon_list() {
   }
 }
 
+function haveCommonElements(arr1, arr2) {
+    return arr1.every(item => arr2.includes(item));
+}
+
 $(document).ready(function () {
   /*  SORTING IN THIS BLOCK */
   let hide = [];
+  let classes = [];
+  let slots = [];
 
   $(".sortable").on("click", function () {
     const tag = $(this).attr("data-tags");
     $(`.list-item`).css("display", "");
+	const isClass = ["scout", "soldier", "pyro", "demo", "heavy", "engi", "medic", "sniper", "spy", "multiclass", "special"].includes(tag);
+	let arr = isClass ? classes : slots;
+	//todo: new filtering doesnt work properly rn? fix it
     if ($(this).attr("data-sort") == "off") {
-      hide = hide.filter((el) => el !== `.${tag}`);
+      //hide = hide.filter((el) => el !== `.${tag}`);
+	  arr = arr.filter((el) => el !== tag);
       $(this).attr("data-sort", "on");
     } else {
-      hide.push(`.${tag}`);
+      //hide.push(`.${tag}`);
+	  arr.push(tag);
       $(this).attr("data-sort", "off");
     }
-    $(hide.join(",")).css("display", "none");
+	$(".list-item").each(function() {
+		if (!haveCommonElements(Array.from(this.classList), classes) && !haveCommonElements(Array.from(this.classList), slots)) {
+			this.style.display = "none";
+		};
+	});
+	if (isClass) {
+		classes = arr;
+	} else {
+		slots = arr;
+	}
+    //$(hide.join(",")).css("display", "none");
+	
   });
 
   $("#deselect-all").click(function () {
@@ -144,7 +166,10 @@ function draw_kill(special) {
   const VICTIM = $("#VICTIM").val();
 
   /* Path to kill icon */
-  const id = df.attr("data-icon-name");
+  const id =
+		special == 3 ? "Capture_" + $(".killerteam")[0].value + ".png"
+		: special == 4 ? "Defend_" + $(".killerteam")[0].value + ".png"
+		: df.attr("data-icon-name");
 
   /* Transparency modifier if needed */
   const transparencyModifier =
@@ -158,8 +183,9 @@ function draw_kill(special) {
     : `#202020` + transparencyModifier;
 
   /* Left and Right text colors */
-  const l_name_color = df.attr("data-colors") == 0 ? "#A3574A" : "#557C83";
-  const r_name_color = df.attr("data-colors") == 0 ? "#557C83" : "#A3574A";
+  const colors = {red: "#A3574A", blue: "#557C83", green: "#5D954C", yellow: "#CDA452"};
+  const l_name_color = colors[$(".killerteam")[0].value];
+  let r_name_color = colors[$(".victimteam")[0].value];
 
   /* Canvas */
   const c = document.getElementById("display-feed");
@@ -175,6 +201,7 @@ function draw_kill(special) {
 
   /* Setting kill icon */
   image.src = "icons_sorted/" + id;
+  console.log(image.src);
 
   /* Setting up context */
   const ctx = c.getContext("2d");
@@ -194,6 +221,10 @@ function draw_kill(special) {
     const custom_font_clr = $("#is_init").prop("checked")
       ? "#3e3923"
       : "#F1E9CB";
+    
+    if (special == 3 || special == 4) {
+		r_name_color = custom_font_clr;
+	}
 
     /* Killstreak count */
     const ks_count = df.attr("data-is-ks");
@@ -205,6 +236,10 @@ function draw_kill(special) {
         ? ctx.measureText("is DOMINATING").width
         : special == 2
         ? ctx.measureText($("#custom_special").val()).width
+        : special == 3
+        ? ctx.measureText("captured").width
+        : special == 4
+        ? ctx.measureText("defended").width
         : 0);
 
     /* adding image width to custom offset */
@@ -343,6 +378,12 @@ function draw_kill(special) {
     } else if (special == 2) {
       ctx.fillStyle = custom_font_clr;
       ctx.fillText($("#custom_special").val(), destX + image_width + 14, 58);
+    } else if (special == 3) {
+      ctx.fillStyle = custom_font_clr;
+      ctx.fillText("captured", destX + image_width + 14, 58);
+    } else if (special == 4) {
+      ctx.fillStyle = custom_font_clr;
+      ctx.fillText("defended", destX + image_width + 14, 58);
     }
     // DRAW VICTIM
     ctx.fillStyle = r_name_color;
@@ -431,3 +472,15 @@ CanvasRenderingContext2D.prototype.roundRect = function (sx, sy, ex, ey, r) {
   this.arc(sx + r, sy + r, r, r2d * 180, r2d * 270, false);
   this.closePath();
 };
+
+
+function teamselect_populate() {
+	var teams = ["Red", "Blue", "Green", "Yellow"];
+	for (i in teams) {
+		$(".teamselect").append("<option value=\"" + teams[i].toLowerCase() + "\">" + teams[i] + "</option>");
+	}
+	$(".teamselect").on("change", function(evt) {
+		console.log(evt.target.value);
+	});
+	$(".victimteam")[0].value = "blue"
+}

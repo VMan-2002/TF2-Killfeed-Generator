@@ -30,9 +30,9 @@
 		<link rel="stylesheet" href="res/styles.css">
 		<script src="res/jquery-3.6.0.slim.min.js"></script>
 		<script type="text/javascript" src="res/icon.js"></script>
-		<script src="res/main_script-min.js"></script>
+		<script src="res/main_script.js"></script>
 	</head>
-	<body onload="get_icon_list(); draw_kill();">
+	<body onload="get_icon_list(); teamselect_populate(); draw_kill();">
 		<h1 align="center" style='margin-bottom: 0; color:#ffffff;'> Team Fortress 2 Killfeed Generator </h1>
 		<p align="center" style='margin-top: 0'> version 1.3.6</p>
 		<h1 align="center">
@@ -46,23 +46,25 @@
 		<div class='wrapper'>
 			<div class="sort" class='same-size'>
 				<div class='sort-btns sort-class'>
-					<img class="sortable sortable-style" src="sort/1.webp" alt="Scout" data-tags="scout" data-sort="on">
-					<img class="sortable sortable-style" src="sort/2.webp" alt="Soldier" data-tags="soldier" data-sort="on">
-					<img class="sortable sortable-style" src="sort/3.webp" alt="Pyro" data-tags="pyro" data-sort="on">
-					<img class="sortable sortable-style" src="sort/4.webp" alt="Demoman" data-tags="demo" data-sort="on">
-					<img class="sortable sortable-style" src="sort/5.webp" alt="Heavy" data-tags="heavy" data-sort="on">
-					<img class="sortable sortable-style" src="sort/6.webp" alt="Engineer" data-tags="engi" data-sort="on">
-					<img class="sortable sortable-style" src="sort/7.webp" alt="Medic" data-tags="medic" data-sort="on">
-					<img class="sortable sortable-style" src="sort/8.webp" alt="Sniper" data-tags="sniper" data-sort="on">
-					<img class="sortable sortable-style" src="sort/9.webp" alt="Spy" data-tags="spy" data-sort="on">
+					<img class="sortable sortable-style" src="sort/1.webp" alt="Scout" title="Scout" data-tags="scout" data-sort="on">
+					<img class="sortable sortable-style" src="sort/2.webp" alt="Soldier" title="Soldier" data-tags="soldier" data-sort="on">
+					<img class="sortable sortable-style" src="sort/3.webp" alt="Pyro" title="Pyro" data-tags="pyro" data-sort="on">
+					<img class="sortable sortable-style" src="sort/4.webp" alt="Demoman" title="Demoman" data-tags="demo" data-sort="on">
+					<img class="sortable sortable-style" src="sort/5.webp" alt="Heavy" title="Heavy" data-tags="heavy" data-sort="on">
+					<img class="sortable sortable-style" src="sort/6.webp" alt="Engineer" title="Engineer" data-tags="engi" data-sort="on">
+					<img class="sortable sortable-style" src="sort/7.webp" alt="Medic" title="Medic" data-tags="medic" data-sort="on">
+					<img class="sortable sortable-style" src="sort/8.webp" alt="Sniper" title="Sniper" data-tags="sniper" data-sort="on">
+					<img class="sortable sortable-style" src="sort/9.webp" alt="Spy" title="Spy" data-tags="spy" data-sort="on">
+					<img class="sortable sortable-style" src="sort/10.webp" alt="Multi-Class" title="Multi-Class" data-tags="multiclass" data-sort="on">
+					<img class="sortable sortable-style" src="sort/11.webp" alt="Special" title="Special" data-tags="special" data-sort="on">
 				</div>
 				<div class='sort-btns sort-type'>
-					<img class="sortable sortable-style" src="sort/primary.webp" alt="Primary" data-tags="primary" data-sort="on">
-					<img class="sortable sortable-style" src="sort/secondary.webp" alt="Secondary" data-tags="secondary" data-sort="on">
-					<img class="sortable sortable-style" src="sort/melee.webp" alt="Melee" data-tags="melee" data-sort="on">
-					<img class="sortable sortable-style" src="sort/pda.webp" alt="PDA" data-tags="pda" data-sort="on">
-					<img class="sortable sortable-style" src="sort/other.webp" alt="Other" data-tags="other" data-sort="on">
-					<img class="sortable-style" id="deselect-all" style="border: 2px solid #9f9f9f" src="sort/minus.png" alt="Minus"
+					<img class="sortable sortable-style" src="sort/primary.webp" alt="Primary" title="Primary" data-tags="primary" data-sort="on">
+					<img class="sortable sortable-style" src="sort/secondary.webp" alt="Secondary" title="Secondary" data-tags="secondary" data-sort="on">
+					<img class="sortable sortable-style" src="sort/melee.webp" alt="Melee" title="Melee" data-tags="melee" data-sort="on">
+					<img class="sortable sortable-style" src="sort/pda.webp" alt="PDA" title="PDA" data-tags="pda" data-sort="on">
+					<img class="sortable sortable-style" src="sort/other.webp" alt="Other" title="Other" data-tags="other" data-sort="on">
+					<img class="sortable-style" id="deselect-all" title="Clear" style="border: 2px solid #9f9f9f" src="sort/minus.png" alt="Clear"
 						data-tags="" data-sort="on">
 				</div>
 			</div>
@@ -71,8 +73,11 @@
 			</div>
 			<div class="main" class='same-size'>
 				<div class="in-main" id="left">
-					<p> Who's the Killer?</p>
-					<input class='name-input' type="text" id="KILLER" value="Sefa + FenFen #FIXTF2"> </input>
+					<p>Who's the Killer?</p>
+					<input class='name-input' type="text" id="KILLER" value="Sefa"> </input>
+					<select class="teamselect killerteam"></select>
+					<input class='name-input' type="text" id="ASSIST" value="FenFen #FIXTF2"> </input>
+					<select class="teamselect assistteam"></select>
 					<div class='helper-text' style="color: #feedd1;">
 						<h2>HOW TO USE:</h2>
 						<p> First select one of the kill icons, shown above. </p>
@@ -121,14 +126,17 @@
 					<p align="center" class="btn">
 						<button id="kill_btn" onclick="draw_kill()" data-icon-id='1'> KILL! </button>
 						<button id="kill_btn_dom" onclick="draw_kill(1)" data-icon-id='1'> DOMINATE! </button>
+						<button id="kill_btn_dom" onclick="draw_kill(3)" data-icon-id='1'> CAPTURE! </button>
+						<button id="kill_btn_dom" onclick="draw_kill(4)" data-icon-id='1'> DEFEND! </button>
 					</p>
 					<p align="center" class="btn"> <button id="save" onclick="save()" data-icon-id='1' data-img-width=''>
 						SAVE? </button>
 					</p>
 				</div>
 				<div class="in-main" id="right">
-					<p> Who's the Victim'?</p>
+					<p>Who's the Victim?</p>
 					<input class='name-input' type="text" id="VICTIM" value="generic sniper bot 4"> </input>
+					<select class="teamselect victimteam"></select>
 					<div class='helper-text' style="color: #feedd1;">
 						<h1> SHORTCUTS: </h1>
 						<h3> ENTER = KILL!</h3>
